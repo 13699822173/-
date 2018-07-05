@@ -12,8 +12,8 @@ typedef void(^sureBtnClick)(BOOL clickStatu);
 
 @interface CustomAlertView : UIView
 
-
 -(instancetype)initBackroundImage:(NSString *)imageB Title:(NSString *)tltleString contentString:(NSString *)contentString sureButtionTitle:(NSString *)sureBtnstring cancelButtionTitle:(NSString *)cancelBtnString ;
+
 @property (nonatomic,copy)sureBtnClick sureBolck;
 
 -(void)clickSureBtn:(sureBtnClick) block;

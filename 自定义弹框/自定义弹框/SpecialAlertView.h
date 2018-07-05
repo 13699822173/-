@@ -13,7 +13,9 @@ typedef void(^sureBlock)(NSString *string);
 @interface SpecialAlertView : UIView
 
 -(instancetype) initWithTitleImage:(NSString *)backImage messageTitle:(NSString *)titleStr messageString:(NSString *)contentStr sureBtnTitle:(NSString *)titleString sureBtnColor:(UIColor *)BtnColor;
+
 @property(nonatomic,copy)sureBlock sureClick;
+
 -(void)withSureClick:(sureBlock)block;
 
 @end

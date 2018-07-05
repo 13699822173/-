@@ -125,16 +125,14 @@
     } completion:^(BOOL finished) {
 
     }];
-
 }
-
 
 -(void)cancelClick:(UIButton *)sender{
     [UIView animateWithDuration:0.3 animations:^{
         [self removeFromSuperview];
     }];
-
 }
+
 -(void)sureClick:(UIButton *)sender{
 
     if (self.sureBolck!=nil) {
