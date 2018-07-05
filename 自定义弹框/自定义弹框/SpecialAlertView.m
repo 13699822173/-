@@ -9,6 +9,7 @@
 #define ALERTVIEW_WIDTH  [UIScreen mainScreen].bounds.size.width-50
 #define HEIGHT [UIScreen mainScreen].bounds.size.height
 #define WIDTH  [UIScreen mainScreen].bounds.size.width
+#define MARGIN  20
 
 #import "SpecialAlertView.h"
 
@@ -27,7 +28,7 @@
     if (self) {
 
         self.frame = [UIScreen mainScreen].bounds;
-        self.alertView = [[UIView alloc]initWithFrame:CGRectMake(15, HEIGHT/2-ALERTVIEW_HEIGHT/2, WIDTH-30, ALERTVIEW_HEIGHT)];
+        self.alertView = [[UIView alloc]initWithFrame:CGRectMake(MARGIN, HEIGHT/2-ALERTVIEW_HEIGHT/2, WIDTH-40, ALERTVIEW_HEIGHT+40)];
         self.alertView.backgroundColor = [UIColor whiteColor];
         self.alertView.layer.cornerRadius=5.0;
         self.alertView.layer.masksToBounds=YES;
@@ -35,20 +36,19 @@
         [self addSubview:self.alertView];
 
         if (backImage) {
-            UIImageView *titleImage = [[UIImageView alloc]initWithFrame:CGRectMake(WIDTH/2-40, 15, 70, 70)];
+            UIImageView *titleImage = [[UIImageView alloc]initWithFrame:CGRectMake((self.alertView.frame.size.width/2)-35, 15, 70, 70)];
             titleImage.image = [UIImage imageNamed:backImage];
             [self.alertView addSubview:titleImage];
         }
         if (titleStr) {
-            UILabel *titleLab = [[UILabel alloc]initWithFrame:CGRectMake(20, 90, ALERTVIEW_WIDTH-40, 30)];
+            UILabel *titleLab = [[UILabel alloc]initWithFrame:CGRectMake(MARGIN, 90, self.alertView.frame.size.width-40, 30)];
             titleLab.text = titleStr;
-            titleLab.backgroundColor = [UIColor redColor];
             titleLab.font = [UIFont systemFontOfSize:17];
             titleLab.textAlignment = NSTextAlignmentCenter;
             [self.alertView addSubview:titleLab];
         }
         if (contentStr) {
-            UILabel *contentLab = [[UILabel alloc]initWithFrame:CGRectMake(20, 120, ALERTVIEW_WIDTH-40, 40)];
+            UILabel *contentLab = [[UILabel alloc]initWithFrame:CGRectMake(MARGIN, 125, self.alertView.frame.size.width-40, 70)];
             contentLab.text = contentStr;
             contentLab.font = [UIFont systemFontOfSize:14];
             contentLab.numberOfLines = 0;
@@ -57,9 +57,11 @@
             [self.alertView addSubview:contentLab];
         }
         if (titleString) {
-            UIButton *sureBtn= [[UIButton alloc]initWithFrame:CGRectMake(25, ALERTVIEW_HEIGHT-50, ALERTVIEW_WIDTH-50, 35)];
+            UIButton *sureBtn= [[UIButton alloc]initWithFrame:CGRectMake(25, ALERTVIEW_HEIGHT-15, self.alertView.frame.size.width-50, 40)];
             [sureBtn setTitle:titleString forState:UIControlStateNormal];
             [sureBtn setBackgroundColor:BtnColor];
+            sureBtn.layer.cornerRadius=3.0;
+            sureBtn.layer.masksToBounds=YES;
             [sureBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             [sureBtn addTarget:self action:@selector(SureClick:) forControlEvents:UIControlEventTouchUpInside];
             [self.alertView addSubview:sureBtn];
@@ -89,9 +91,18 @@
 }
 
 -(void)SureClick:(UIButton *)sender{
+
+    if (self.sureClick) {
+        self.sureClick(nil);
+    }
+
     [UIView animateWithDuration:0.3 animations:^{
         [self removeFromSuperview];
     }];
+}
+
+-(void)withSureClick:(sureBlock)block{
+    _sureClick = block;
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{

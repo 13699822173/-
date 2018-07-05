@@ -446,7 +446,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Q3A25WQE8R;
+				DEVELOPMENT_TEAM = SNED37MYY5;
 				INFOPLIST_FILE = "自定义弹框/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -463,7 +463,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Q3A25WQE8R;
+				DEVELOPMENT_TEAM = SNED37MYY5;
 				INFOPLIST_FILE = "自定义弹框/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
