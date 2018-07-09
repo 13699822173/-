@@ -66,7 +66,6 @@
             [sureBtn addTarget:self action:@selector(SureClick:) forControlEvents:UIControlEventTouchUpInside];
             [self.alertView addSubview:sureBtn];
         }
-        
     }
     [self showAnimation];
     return self;

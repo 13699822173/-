@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "CustomAlertView.h"
 #import "SpecialAlertView.h"
+#import "SimpleAlertView.h"
 
 @interface ViewController ()
 
@@ -25,6 +26,16 @@
 
     [self.view addSubview:self.customBtn];
     [self.view addSubview:self.speciaBtn];
+
+
+    UILabel *label=[[UILabel alloc]init];
+    label.font=[UIFont systemFontOfSize:15.0];
+    label.text = @"今天天气不错呢，准备到中国参加耐克的活动，中国的球迷准备好了吗？明天早上八点五棵松体育馆见，我爱你们！";
+    label.numberOfLines = 0;
+    label.lineBreakMode = NSLineBreakByWordWrapping;
+    CGSize size = [label sizeThatFits:CGSizeMake(200, MAXFLOAT)];//根据文字的长度返回一个最佳宽度和高度
+    label.frame = CGRectMake(0, 200, 200, size.height);
+//    [self.view addSubview:label];
 
 }
 
@@ -69,6 +80,9 @@
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+
+    SimpleAlertView *simple = [[SimpleAlertView alloc]initWithTitle:@"123" Message:@"  今天天气不错呢，准备到中国参加耐克的活动，中国的球迷准备好了吗？明天早上八点五棵松体育馆见，我爱你们！"];
+    
 
 }
 

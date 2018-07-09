@@ -61,6 +61,7 @@
             lineView.backgroundColor = [UIColor blueColor];
             [_alertView addSubview:lineView];
         }
+        
         if (contentString) {
             UILabel *contentLab = [[UILabel alloc]initWithFrame:CGRectMake(15, 40, ALERTVIEW_WIDTH-30, ALERTVIEW_HEIGHT/2)];
             contentLab.text = contentString;
@@ -71,6 +72,7 @@
             [_alertView addSubview:contentLab];
 
         }
+
         if (sureBtnstring) {
             UIButton *OkBtn = [UIButton buttonWithType:UIButtonTypeCustom];
             OkBtn.frame = CGRectMake(ALERTVIEW_WIDTH-(ALERTVIEW_WIDTH-10)/2, ALERTVIEW_HEIGHT-50, (ALERTVIEW_WIDTH-30)/2, 35);
@@ -144,29 +146,6 @@
 -(void)clickSureBtn:(sureBtnClick)block{
     _sureBolck = block;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 @end
