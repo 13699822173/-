@@ -38,7 +38,6 @@
         [self addSubview:_alertView];
         self.frame = [UIScreen mainScreen].bounds;
 
-
         if (title) {
             _titleLab = [[UILabel alloc]init];
             _titleLab.text = title;
@@ -62,10 +61,14 @@
             _messageLab.frame = CGRectMake(10, 40, self.alertView.frame.size.width-20, size.height);
                 [_alertView addSubview:_messageLab];
         }
+        UIButton*sureBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        sureBtn.frame = CGRectMake(20, self.alertView.frame.size.height-50, self.alertView.frame.size.width-40, 44);
+        [sureBtn setTitle:@"确定" forState:UIControlStateNormal];
+        sureBtn.backgroundColor = [UIColor blueColor];
+        [sureBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [sureBtn addTarget:self action:@selector(sureClick:) forControlEvents:UIControlEventTouchUpInside];
+        [self.alertView addSubview:sureBtn];
 
-//        if (_messageLab.frame.size.height !=0 ) {
-//            <#statements#>
-//        }
     }
     [self showView];
     return self;
@@ -87,10 +90,20 @@
     } completion:^(BOOL finished) {
 
     }];
-
 }
 
+-(void)sureClick:(UIButton *)sender{
 
+    LRLog(@"%@",VERSION);
+    if (_blockSimple) {
+        [self sureBlock:nil];
+    }
+    [self removeFromSuperview];
+}
+
+-(void)sureBlock:(simpleBlock)block{
+    _blockSimple = block;
+}
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
 

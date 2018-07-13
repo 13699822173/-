@@ -10,6 +10,8 @@
 #import "CustomAlertView.h"
 #import "SpecialAlertView.h"
 #import "SimpleAlertView.h"
+#import "ViewController+VCcategory.h"
+#import "ViewController+VCcategory.h"
 
 @interface ViewController ()
 
@@ -27,6 +29,12 @@
     [self.view addSubview:self.customBtn];
     [self.view addSubview:self.speciaBtn];
 
+    
+
+    LRLog(@"ceceeeeeeeeee");
+
+//    [self testClass];
+
 
     UILabel *label=[[UILabel alloc]init];
     label.font=[UIFont systemFontOfSize:15.0];
@@ -36,6 +44,8 @@
     CGSize size = [label sizeThatFits:CGSizeMake(200, MAXFLOAT)];//根据文字的长度返回一个最佳宽度和高度
     label.frame = CGRectMake(0, 200, 200, size.height);
 //    [self.view addSubview:label];
+
+
 
 }
 

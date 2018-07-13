@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^simpleBlock)(NSString *string);
+
 @interface SimpleAlertView : UIView
 
 -(instancetype)initWithTitle:(NSString *)title Message:(NSString *)message;
 
+@property (nonatomic,copy)simpleBlock blockSimple;
+
+-(void)sureBlock:(simpleBlock)block;
 @end

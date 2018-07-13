@@ -28,6 +28,7 @@
 		ECA2F35D20EB696C00963DC6 /* _____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = ECA2F35C20EB696C00963DC6 /* _____Tests.m */; };
 		ECA2F36820EB696C00963DC6 /* _____UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = ECA2F36720EB696C00963DC6 /* _____UITests.m */; };
 		ECA2F37720EB69E500963DC6 /* CustomAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = ECA2F37620EB69E500963DC6 /* CustomAlertView.m */; };
+		ECD2621320F48C7700249F35 /* ViewController+VCcategory.m in Sources */ = {isa = PBXBuildFile; fileRef = ECD2621220F48C7700249F35 /* ViewController+VCcategory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,10 @@
 		ECA2F36920EB696C00963DC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ECA2F37520EB69E500963DC6 /* CustomAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomAlertView.h; sourceTree = "<group>"; };
 		ECA2F37620EB69E500963DC6 /* CustomAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomAlertView.m; sourceTree = "<group>"; };
+		ECD2620F20F457EC00249F35 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		ECD2621020F458D500249F35 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		ECD2621120F48C7700249F35 /* ViewController+VCcategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ViewController+VCcategory.h"; sourceTree = "<group>"; };
+		ECD2621220F48C7700249F35 /* ViewController+VCcategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ViewController+VCcategory.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,12 +187,16 @@
 				ECA2F34420EB696A00963DC6 /* AppDelegate.m */,
 				ECA2F34620EB696A00963DC6 /* ViewController.h */,
 				ECA2F34720EB696A00963DC6 /* ViewController.m */,
+				ECD2621120F48C7700249F35 /* ViewController+VCcategory.h */,
+				ECD2621220F48C7700249F35 /* ViewController+VCcategory.m */,
 				ECA2F37520EB69E500963DC6 /* CustomAlertView.h */,
 				ECA2F37620EB69E500963DC6 /* CustomAlertView.m */,
 				EC33F32C20ECC96F0054AC13 /* SpecialAlertView.h */,
 				EC33F32D20ECC96F0054AC13 /* SpecialAlertView.m */,
 				EC4CAF9E20EF4EBB004EE985 /* SimpleAlertView.h */,
 				EC4CAF9F20EF4EBB004EE985 /* SimpleAlertView.m */,
+				ECD2620F20F457EC00249F35 /* Header.h */,
+				ECD2621020F458D500249F35 /* PrefixHeader.pch */,
 				ECA2F34920EB696A00963DC6 /* Main.storyboard */,
 				ECA2F34C20EB696B00963DC6 /* Assets.xcassets */,
 				ECA2F34E20EB696B00963DC6 /* LaunchScreen.storyboard */,
@@ -358,6 +367,7 @@
 				EC4CAFC020EF5383004EE985 /* NSArray+MASAdditions.m in Sources */,
 				EC4CAFA020EF4EBB004EE985 /* SimpleAlertView.m in Sources */,
 				ECA2F37720EB69E500963DC6 /* CustomAlertView.m in Sources */,
+				ECD2621320F48C7700249F35 /* ViewController+VCcategory.m in Sources */,
 				EC4CAFC420EF5383004EE985 /* MASViewAttribute.m in Sources */,
 				EC4CAFC220EF5383004EE985 /* MASConstraint.m in Sources */,
 				ECA2F34520EB696A00963DC6 /* AppDelegate.m in Sources */,
@@ -531,6 +541,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SNED37MYY5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "/Users/jiasiwei/自定义/自定义弹框/自定义弹框/PrefixHeader.pch";
 				INFOPLIST_FILE = "自定义弹框/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -548,6 +560,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SNED37MYY5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "/Users/jiasiwei/自定义/自定义弹框/自定义弹框/PrefixHeader.pch";
 				INFOPLIST_FILE = "自定义弹框/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
